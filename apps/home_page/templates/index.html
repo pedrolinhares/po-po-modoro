@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div id="inventory">
+		<table id="table_inventory">
+		{% for task in tasks_in_inventory %}
+			<tr>
+				<td> {{ task.title }} </td>
+				<td> {{ task.num_pomodoros }} </td>
+			</tr>
+
+		{% endfor %}
+		</table>
+	</div>
+{% endblock%}

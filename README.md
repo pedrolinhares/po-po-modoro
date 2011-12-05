@@ -10,7 +10,7 @@ This project implement a web app for [The Pomodoro Technique®](http://www.pomod
 
 ### Running the tests
 
-¿¡Pedro?!
+    python manage.py test
 
 ## License
 

@@ -119,6 +119,7 @@ INSTALLED_APPS = (
 	'apps.home_page',
 	'apps.tasks',
 	'apps.user_app',
+	'south',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -153,3 +154,4 @@ LOGOUT_URL = "/logout/"
 LOGIN_REDIRECT_URL = "/"
 
 AUTH_PROFILE_MODULE = 'apps.user_app.UserProfile'
+

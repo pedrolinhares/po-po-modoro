@@ -118,8 +118,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'apps.home_page',
-	'apps.tasks',
+	'apps.pomodoro',
 	'apps.user_app',
 	'south',
     # Uncomment the next line to enable the admin:

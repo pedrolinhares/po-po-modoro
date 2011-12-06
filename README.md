@@ -14,5 +14,4 @@ This project implement a web app for [The Pomodoro Technique®](http://www.pomod
 
 ## License
 
-¿¡Pedro?!
-
+	See the file LICENSE.txt

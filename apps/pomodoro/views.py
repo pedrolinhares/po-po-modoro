@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-from apps.tasks.models import Task
+from apps.pomodoro.models import Task
 
 def dashboard(request):
 	return render_to_response('dashboard.html')

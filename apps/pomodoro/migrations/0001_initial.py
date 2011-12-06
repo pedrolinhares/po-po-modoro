@@ -9,20 +9,20 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         
         # Adding model 'Task'
-        db.create_table('tasks_task', (
+        db.create_table('pomodoro_task', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('num_pomodoros', self.gf('django.db.models.fields.IntegerField')()),
             ('worksheet', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['user_app.UserProfile'])),
         ))
-        db.send_create_signal('tasks', ['Task'])
+        db.send_create_signal('pomodoro', ['Task'])
 
 
     def backwards(self, orm):
         
         # Deleting model 'Task'
-        db.delete_table('tasks_task')
+        db.delete_table('pomodoro_task')
 
 
     models = {
@@ -62,7 +62,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'tasks.task': {
+        'pomodoro.task': {
             'Meta': {'object_name': 'Task'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'num_pomodoros': ('django.db.models.fields.IntegerField', [], {}),
@@ -79,4 +79,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['tasks']
+    complete_apps = ['pomodoro']

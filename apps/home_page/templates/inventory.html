@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h1>Inventory</h1>
 	<div id="inventory">
 		<table id="table_inventory">
 		{% for task in tasks_in_inventory %}
@@ -13,3 +14,4 @@
 		</table>
 	</div>
 {% endblock%}
+

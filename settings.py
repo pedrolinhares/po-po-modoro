@@ -141,8 +141,8 @@ LOGGING = {
     }
 }
 
-LOGIN_URL = "/login/"
-LOGOUT_URL = "/logout/"
+LOGIN_URL = "/accounts/login/"
+LOGOUT_URL = "/accounts/logout/"
 LOGIN_REDIRECT_URL = "/"
 
 AUTH_PROFILE_MODULE = 'apps.user_app.UserProfile'

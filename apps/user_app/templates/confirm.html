@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if has_account %}
+		<h2> You are already loged in.</h2>
+	{% endif %}
+
+	{% if expired %}
+		<h2> Your activation key has expired. </h2>
+	{% endif %}
+
+	{% if success %}
+		<h2> Your account is now activated. </h2>
+	{% endif %}
+
+{% endblock %}

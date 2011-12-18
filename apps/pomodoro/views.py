@@ -11,12 +11,18 @@ def dashboard(request):
 
 @login_required
 def todo_today(request):
-	tasks_in_todo = Task.objects.filter(worksheet="todo")
+	user = request.user
+	user = UserProfile.objects.get(user=user)
+	
+	tasks_in_todo = Task.objects.filter(worksheet="todo", user=user)
 	return render_to_response('todo-today.html', { 'tasks_in_todo': tasks_in_todo })
 
 @login_required
 def inventory(request):
-	tasks_in_inventory = Task.objects.filter(worksheet="inventory")
+	user = request.user
+	user = UserProfile.objects.get(user=user)
+	
+	tasks_in_inventory = Task.objects.filter(worksheet="inventory", user=user)
 	return render_to_response('inventory.html', { 'tasks_in_inventory': tasks_in_inventory })
 
 @login_required

@@ -1,17 +1,33 @@
 {% extends "base.html" %}
 
+{% block scripts %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="/media/js/tasks.js"></script>
+{% endblock %}
+
 {% block content %}
   <h1>Inventory</h1>
-	<div id="inventory">
-		<table id="table_inventory">
-		{% for task in tasks_in_inventory %}
-			<tr>
-				<td> {{ task.title }} </td>
-				<td> {{ task.num_pomodoros }} </td>
-			</tr>
+	<div id="inventory_content">
+		<table id="inventory" border="1">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Pomodoros</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for task in tasks_in_inventory %}
+					<tr id="{{ task.id }}">
+						<td class="title">{{ task.title }}</td>
+						<td class="pomodoros">{{ task.pomodoros }}</td>
+					</tr>
 
-		{% endfor %}
+				{% endfor %}
+				<tr id="-1">
+					<td class="title"></td>
+					<td class="pomodoros"></td>
+				</tr>
+		</tbody>
 		</table>
 	</div>
 {% endblock%}
-

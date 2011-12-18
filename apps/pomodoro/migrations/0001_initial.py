@@ -12,8 +12,8 @@ class Migration(SchemaMigration):
         db.create_table('pomodoro_task', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('num_pomodoros', self.gf('django.db.models.fields.IntegerField')()),
-            ('worksheet', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('pomodoros', self.gf('django.db.models.fields.IntegerField')()),
+            ('worksheet', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['user_app.UserProfile'])),
         ))
         db.send_create_signal('pomodoro', ['Task'])
@@ -65,10 +65,10 @@ class Migration(SchemaMigration):
         'pomodoro.task': {
             'Meta': {'object_name': 'Task'},
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'num_pomodoros': ('django.db.models.fields.IntegerField', [], {}),
+            'pomodoros': ('django.db.models.fields.IntegerField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['user_app.UserProfile']"}),
-            'worksheet': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+            'worksheet': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         },
         'user_app.userprofile': {
             'Meta': {'object_name': 'UserProfile'},

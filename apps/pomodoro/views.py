@@ -11,12 +11,13 @@ def dashboard(request):
 
 @login_required
 def todo_today(request):
-	return render_to_response('todo-today.html')
+	tasks_in_todo = Task.objects.filter(worksheet="todo")
+	return render_to_response('todo-today.html', { 'tasks_in_todo': tasks_in_todo })
 
 @login_required
 def inventory(request):
 	tasks_in_inventory = Task.objects.filter(worksheet="inventory")
-	return render_to_response('inventory.html', {'tasks_in_inventory': tasks_in_inventory})
+	return render_to_response('inventory.html', { 'tasks_in_inventory': tasks_in_inventory })
 
 @login_required
 def update_task(request, id):

@@ -44,7 +44,7 @@ function create_task(input) {
 			parent.parent().attr("id", new_task.pk);
 
 			//add empty line at the end
-			$('#inventory tr:last')
+			$('#' + worksheet + ' tr:last')
 			.after('<tr id="-1"><td class="title"></td><td class="pomodoros"></td></tr>');
 			$('td', 'tr#-1').click(add_input);
 		})
@@ -83,5 +83,9 @@ function add_input() {
 $(function () {
 	if ($('#inventory').length > 0) {
 		$('#inventory td').click(add_input);
+	}
+
+	if ($('#todo').length > 0) {
+		$('#todo td').click(add_input);
 	}
 });

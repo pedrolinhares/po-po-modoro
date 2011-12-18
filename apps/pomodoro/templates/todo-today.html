@@ -1,7 +1,34 @@
 {% extends "base.html" %}
 
-{% block content %}
-  <h1>Todo today</h1>
+{% block scripts %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript" src="/media/js/tasks.js"></script>
+{% endblock %}
 
+{% block content %}
+  <h1>Inventory</h1>
+	<div id="todo_content">
+		<table id="todo" border="1">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Pomodoros</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for task in tasks_in_todo %}
+					<tr id="{{ task.id }}">
+						<td class="title">{{ task.title }}</td>
+						<td class="pomodoros">{{ task.pomodoros }}</td>
+					</tr>
+
+				{% endfor %}
+				<tr id="-1">
+					<td class="title"></td>
+					<td class="pomodoros"></td>
+				</tr>
+		</tbody>
+		</table>
+	</div>
 {% endblock%}
 
